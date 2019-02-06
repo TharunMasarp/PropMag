@@ -29,6 +29,52 @@ public class RenterDetails {
 	
 	@Column(name="R_PASSWORD")
 	private String password;
-	
-	
+
+	public String getRenterId() {
+		return renterId;
+	}
+
+	public void setRenterId(String renterId) {
+		this.renterId = renterId;
+	}
+
+	public String getRenterName() {
+		return renterName;
+	}
+
+	public void setRenterName(String renterName) {
+		this.renterName = renterName;
+	}
+
+	public String getLocation() {
+		return location;
+	}
+
+	public void setLocation(String location) {
+		this.location = location;
+	}
+
+	public String getMobile() {
+		return mobile;
+	}
+
+	public void setMobile(String mobile) {
+		this.mobile = mobile;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
 }

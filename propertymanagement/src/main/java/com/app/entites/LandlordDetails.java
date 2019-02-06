@@ -87,7 +87,4 @@ public class LandlordDetails {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
-	
-	
 }

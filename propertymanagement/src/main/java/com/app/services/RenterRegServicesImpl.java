@@ -3,7 +3,6 @@ package com.app.services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 
 import com.app.beans.RenterRegistration;
 import com.app.dao.RenterRegDao;
@@ -11,16 +10,16 @@ import com.app.dao.RenterRegDao;
 public class RenterRegServicesImpl implements RenterRegServices{
 	
 	@Autowired
-	@Qualifier(value="renterRegDaoImpl")
-	private RenterRegDao rrDao;
+	/*@Qualifier(value="renterRegDaoImpl")*/
+	private RenterRegDao renterRegDaoImpl;
 
 	@Override
 	public String saveRenter(RenterRegistration renterReg) {
-		return rrDao.saveRenter(renterReg);
+		return renterRegDaoImpl.saveRenter(renterReg);
 	}
 
 	@Override
 	public List<RenterRegistration> authenticateRenter(String userName, String password) {
-		return rrDao.authenticateRenter(userName, password);
+		return renterRegDaoImpl.authenticateRenter(userName, password);
 	}
 }

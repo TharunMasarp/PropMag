@@ -17,7 +17,7 @@ import com.app.entites.LandlordAddProperty;
 import com.app.entites.LandlordDetails;
 
 @Transactional
-@Repository
+@Repository("landlordRegDaoImpl")
 public class LandlordRegDaoImpl implements LandlordRegDao{
 	
 	@Autowired

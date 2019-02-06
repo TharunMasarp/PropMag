@@ -15,7 +15,7 @@ import com.app.beans.RenterRegistration;
 import com.app.entites.RenterDetails;
 
 @Transactional
-@Repository
+@Repository("renterRegDaoImpl")
 public class RenterRegDaoImpl implements RenterRegDao {
 	
 	@Autowired

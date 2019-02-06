@@ -17,10 +17,10 @@
 		<a href="landlord_login.htm">Landlord Login</a>&nbsp;&nbsp;&nbsp;&nbsp;
 		<a href="renter_login.htm">Renter Login</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 		
-		<form:form action="searchProperty.htm" method="post" modelAttribute="searchProperty">
+		<%-- <form:form action="searchProperty.htm" method="post" modelAttribute="searchProperty">
 			<form:input path="propertyLocation" placeholder="Enter location"/>
 			<input type="submit" value=" search Property"/>
-		</form:form>
+		</form:form> --%>
 		<hr width=100%>
 		
 		<h3 align="center">Properties</h3>

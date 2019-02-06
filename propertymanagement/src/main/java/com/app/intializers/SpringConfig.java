@@ -1,6 +1,6 @@
 package com.app.intializers;
 
-import org.springframework.context.annotation.Bean;
+/*import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
@@ -9,10 +9,10 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @Configuration
-@EnableWebMvc
-public class SpringConfig implements WebMvcConfigurer {
+@EnableWebMvc*/
+public class SpringConfig /*implements WebMvcConfigurer*/ {
 	
-	@Bean
+	/*@Bean
 	public ViewResolver getViewResolver() {
 		InternalResourceViewResolver resolver = new InternalResourceViewResolver();
 		resolver.setPrefix("WEB-INF/views/");
@@ -24,6 +24,6 @@ public class SpringConfig implements WebMvcConfigurer {
     public void configureDefaultServletHandling(
       DefaultServletHandlerConfigurer configurer) {
         configurer.enable();
-    }
+    }*/
  	
 }

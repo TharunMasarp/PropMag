@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 import com.app.beans.LandlordRegistration;
 
 
-@Component
+/*@Component*/
 public interface LandlordRegServices {
 	public String saveLandlord(LandlordRegistration landlordReg);
 	public List<LandlordRegistration> authenticateLandlord(String userName, String password);

@@ -1,6 +1,6 @@
 package com.app.controllers;
 
-import org.eclipse.jdt.internal.compiler.impl.IrritantSet;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -17,7 +17,7 @@ import com.app.validators.LandlordRegValidator;
 public class LandlordController {
 	
 	@Autowired
-	private LandlordRegServices lrs;
+	private LandlordRegServices landlordRegServicesImpl;
 	
 	@RequestMapping(value="/landlord_registration.htm", method=RequestMethod.GET)
 	public ModelAndView saveLL() {
@@ -38,7 +38,7 @@ public class LandlordController {
 			return mav;
 		}
 		if(llreg.getPassword().equals(llreg.getcPassword())) {
-			lrs.saveLandlord(llreg);
+			landlordRegServicesImpl.saveLandlord(llreg);
 			mav.addObject("userName", llreg.getFirstName()+llreg.getLastName());
 			mav.setViewName("reg_success");
 			return mav;

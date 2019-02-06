@@ -1,6 +1,6 @@
 package com.app.intializers;
 
-import java.util.Properties;
+/*import java.util.Properties;
 
 import javax.sql.DataSource;
 
@@ -16,14 +16,14 @@ import org.springframework.dao.annotation.PersistenceExceptionTranslationPostPro
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
-
-@Configuration
+*/
+/*@Configuration
 @EnableTransactionManagement
 @PropertySource({"classpath:persistence-sql.properties"})
-@ComponentScan({"com.app.entites"})
+@ComponentScan({"com.app.entites"})*/
 public class PersistenceConfig {
 	
-	@Autowired
+	/*@Autowired
 	private Environment env;
 	
 	@Bean
@@ -62,7 +62,7 @@ public class PersistenceConfig {
 		prop.setProperty("hibernate.hbm2ddl.auto", "update");
 		prop.setProperty("hibernate.Dialect","org.hibernate.dialect.Oracle10gDialect");
 		return prop;
-	}
+	}*/
 	
 	
 }

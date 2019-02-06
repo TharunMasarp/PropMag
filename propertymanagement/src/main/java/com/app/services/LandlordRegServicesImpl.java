@@ -11,16 +11,16 @@ import com.app.dao.LandlordRegDao;
 public class LandlordRegServicesImpl implements LandlordRegServices{
 	
 	@Autowired
-	private LandlordRegDao llrDao;
+	private LandlordRegDao landlordRegDaoImpl;
 
 	@Override
 	public String saveLandlord(LandlordRegistration landlordReg) {
-		return llrDao.saveLandlord(landlordReg);
+		return landlordRegDaoImpl.saveLandlord(landlordReg);
 	}
 
 	@Override
 	public List<LandlordRegistration> authenticateLandlord(String userName, String password) {
-		return llrDao.authenticateLandlord(userName, password);
+		return landlordRegDaoImpl.authenticateLandlord(userName, password);
 	}
 
 }

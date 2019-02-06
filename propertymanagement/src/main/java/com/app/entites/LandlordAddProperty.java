@@ -60,9 +60,4 @@ public class LandlordAddProperty {
 	public void setState(String state) {
 		this.state = state;
 	}
-	
-	
-	
-	
-	
 }
