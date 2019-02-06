@@ -53,8 +53,8 @@
 				</tr>
 				<tr>
 					<td>Confirm Password</td>
-					<td><input path="cpassword"/></td>
-					<td><font color="red"><form:errors path="cpassword"></form:errors></font></td>
+					<td><input path="cPassword"/></td>
+					<td><font color="red"><form:errors path="cPassword"></form:errors></font></td>
 				</tr>
 				<tr>
 					<td><input type="submit" value="Register"></td>
