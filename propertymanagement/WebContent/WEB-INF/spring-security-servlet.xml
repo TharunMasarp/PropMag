@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+xmlns:beans="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+        http://www.springframework.org/schema/security
+        http://www.springframework.org/schema/security/spring-security.xsd">
+		<!-- <security:http>
+			<security:intercept-url pattern="/landlord_login" access="ROLE_USER"/>
+			<security:session-management invalid-session-url="/lanlord_login" session-fixation-protection="newSession">
+				<security:concurrency-control max-sessions="2" error-if-maximum-exceeded="true"/>
+			</security:session-management>
+			<security:logout logout-success-url="/landlord_login" delete-cookies="JSESSIONID"/>
+		</security:http>
+		<security:authentication-manager>
+			<security:authentication-provider>
+				<security:password-encoder hash="sha"/>
+				<security:user-service>
+					<security:user name="userName" password="123" authorities="Role_user"/>
+				</security:user-service>
+			</security:authentication-provider>
+		</security:authentication-manager> -->
+		
+	<http auto-config="true" use-expressions="true">
+			<intercept-url pattern="/" access="permitAll"/>
+			<intercept-url pattern="/home" access="permitAll"/>
+			<intercept-url pattern="/landlord_home" access="user"/>
+			<intercept-url pattern="/landlord_prop_add" access="user"/>
+			<intercept-url pattern="/renter_login" access="user"/>
+			<intercept-url pattern="/renter-home" access="user"/>
+			<intercept-url pattern="/renter_fav_list" access="user"/>
+			<intercept-url pattern="/renter_req_add" access="user"/>
+			<intercept-url pattern="/searched" access="permitAll"/>
+			<form-login login-page="/landlord_login" default-target-url="/list" authentication-failure-url="/home"/>
+			<form-login login-page="/renter_login" default-target-url="/list" authentication-failure-url="/home"/>
+			<logout logout-success-url="/logout"/>
+		</http>
+		<authentication-manager>
+			<authentication-provider>
+				<password-encoder hash="bcrypt"/>
+				<jdbc-user-service data-source-ref="dataSource" 
+					users-by-username-query="select ll_id, password from Landlord_Details where ll_id=?"
+					authorities-by-username-query="select ll_id, role_name from PMRA_ROLES"/>
+			</authentication-provider>
+		</authentication-manager>
+		
+		<!-- <security:http auto-config="true">
+			<security:intercept-url pattern="/" access="permitAll"/>
+			<security:intercept-url pattern="/home" access="permitAll"/>
+			<security:intercept-url pattern="/landlord_home" access="user"/>
+			<security:intercept-url pattern="/landlord_prop_add" access="user"/>
+			<security:intercept-url pattern="/renter_login" access="user"/>
+			<security:intercept-url pattern="/renter-home" access="user"/>
+			<security:intercept-url pattern="/renter_fav_list" access="user"/>
+			<security:intercept-url pattern="/renter_req_add" access="user"/>
+			<security:intercept-url pattern="/searched" access="permitAll"/>
+			<security:form-login login-page="/landlord_login" default-target-url="/list" authentication-failure-url="/home"/>
+			<security:form-login login-page="/renter_login" default-target-url="/list" authentication-failure-url="/home"/>
+			<security:logout logout-success-url="/logout"/>
+		</security:http>
+		<security:authentication-manager>
+			<security:authentication-provider>
+				<security:password-encoder hash="bcrypt"/>
+				<security:jdbc-user-service data-source-ref="dataSource" 
+					users-by-username-query="select ll_id, password from Landlord_Details where ll_id=?"
+					authorities-by-username-query="select ll_id, role_name from PMRA_ROLES"/>
+			</security:authentication-provider>
+		</security:authentication-manager> -->
+		
+</beans:beans>

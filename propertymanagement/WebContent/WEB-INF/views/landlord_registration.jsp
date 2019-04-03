@@ -15,45 +15,45 @@
 			<table align="center">
 				<tr>
 					<td>first Name</td>
-					<td><input path="firstName"/></td>
+					<td><form:input path="firstName"/> </td>
 					<td><font color="red"><form:errors path="firstName"></form:errors></font></td>
 				</tr>
 				<tr>
 					<td>Last Name</td>
-					<td><input path="LastName"/></td>
+					<td><form:input path="lastName"/> </td>
 					<td><font color="red"><form:errors path="lastName"></form:errors></font></td>
 				</tr>
 				<tr>
 					<td>Gender</td>
 					<td>
-						<input type="radio" path="gender" value="male"/>Male
-						<input type="radio" path="gender" value="female"/>female
+						<input type="radio" name="gender" value="male"/> Male
+						<input type="radio" name="gender" value="female"/>female
 					</td>
 					<td><font color="red"><form:errors path="gender"></form:errors></font></td>
 				</tr>
 				<tr>
 					<td>City</td>
-					<td><input path="city"/></td>
+					<td><form:input path="city"/> </td>
 					<td><font color="red"><form:errors path="city"></form:errors></font></td>
 				</tr>
 				<tr>
 					<td>Mobile</td>
-					<td><input path="mobile"/></td>
+					<td><form:input path="mobile"/></td>
 					<td><font color="red"><form:errors path="mobile"></form:errors></font></td>
 				</tr>
 				<tr>
 					<td>Email</td>
-					<td><input path="email"/></td>
+					<td><form:input path="email"/> </td>
 					<td><font color="red"><form:errors path="email"></form:errors></font></td>
 				</tr>
 				<tr>
 					<td>Password</td>
-					<td><input path="password"/></td>
+					<td><form:input path="password"/> </td>
 					<td><font color="red"><form:errors path="password"></form:errors></font></td>
 				</tr>
 				<tr>
 					<td>Confirm Password</td>
-					<td><input path="cPassword"/></td>
+					<td><form:input path="cPassword"/> </td>
 					<td><font color="red"><form:errors path="cPassword"></form:errors></font></td>
 				</tr>
 				<tr>

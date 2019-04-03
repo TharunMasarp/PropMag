@@ -9,6 +9,8 @@ import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Repository;
 
 import com.app.beans.AddProperty;
@@ -30,18 +32,20 @@ public class LandlordRegDaoImpl implements LandlordRegDao{
 		Session session = sessionFactory.getCurrentSession();
 		session.saveOrUpdate(llDetails);
 		
-				return llDetails.getLandlordName()+" registered successfully";
+				return llDetails.getFirstName()+" registered successfully";
 	}
 
 	@Override
-	public List<LandlordRegistration> authenticateLandlord(String userName, String password) {
-		String sqlQuery = "from landlord_details where ll_name=:userid and password=:password";
+	public List<LandlordDetails> authenticateLandlord(String userName, String originalPassword) {
+		PasswordEncoder encoder = new BCryptPasswordEncoder();
+		String encoderPassword = encoder.encode(originalPassword);
+		String sqlQuery = "from LandlordDetails where LL_ID=:userid and password=:password";
 		@SuppressWarnings("rawtypes")
 		Query query = sessionFactory.getCurrentSession().createQuery(sqlQuery);
 		query.setParameter("userid", userName);
-		query.setParameter("password", password);
+		query.setParameter("password", encoderPassword);
 		@SuppressWarnings("unchecked")
-		List<LandlordRegistration> llDetails = query.list();
+		List<LandlordDetails> llDetails = query.list();
 		return llDetails;	
 	}
 

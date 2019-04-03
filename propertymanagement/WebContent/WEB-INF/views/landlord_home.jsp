@@ -12,6 +12,7 @@
 		<hr width=500>
 		<a href="landlord_prop_add.htm">Add Property</a>
 		<hr width=100%>
+		<h3>Welcome, ${loggedUserName}</h3>
 		<center><font color="brown">Saved Property Details</font></center>
 		<table cellspacing="20" align="center">
 		<tr>

@@ -12,32 +12,33 @@
 		<hr width=500>
 		<a href="landlord_home.htm">Home</a>
 		<hr width=100%>
+		<h3>Welcome, ${loggedUserName}</h3>
 		<center><font color="brown">Adding Property</font></center>
 		<form:form action="add_prop.htm" method="post" modelAttribute="addProp">
 			<table align="center">
 				<tr>
 					<td>Area(in sqft)</td>
-					<td><input path="area"/></td>
+					<td><form:input path="area"/> </td>
 					<td><font color="red"><form:errors path="area"></form:errors></font></td>
 				</tr>
 				<tr>
 					<td>Location</td>
-					<td><input path="location"/></td>
+					<td><form:input path="location"/> </td>
 					<td><font color="red"><form:errors path="location"></form:errors></font></td>
 				</tr>
 				<tr>
 					<td>City</td>
-					<td><input path="city"/></td>
+					<td><form:input path="city"/></td>
 					<td><font color="red"><form:errors path="city"></form:errors></font></td>
 				</tr>
 				<tr>
 					<td>State</td>
-					<td><input path="state"/></td>
+					<td><form:input path="state"/> </td>
 					<td><font color="red"><form:errors path="state"></form:errors></font></td>
 				</tr>
 				<tr>
 					<td>
-						<input type="submit" value="Add" align="center">
+						<input type="submit" value="Add"/>
 					</td>
 				</tr>
 			</table>

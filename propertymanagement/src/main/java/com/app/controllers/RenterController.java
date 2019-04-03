@@ -26,6 +26,7 @@ public class RenterController {
 		return mav;
 	}
 	
+	@RequestMapping(value="/renter_reg.htm", method=RequestMethod.POST)
 	public ModelAndView saveRenter(@ModelAttribute("renterReg")RenterRegistration rreg, BindingResult errors) {
 		ModelAndView mav =  new ModelAndView();
 		RenterRegValidator rrv = new RenterRegValidator();

@@ -17,4 +17,6 @@ public class CommomController {
 		mav.setViewName("home");
 		return mav;
 	}
+	
+	
 }

@@ -1,6 +1,7 @@
 package com.app.beans;
 
 public class AddProperty {
+	/*private */
 	private double area;
 	private String location;
 	private String city;

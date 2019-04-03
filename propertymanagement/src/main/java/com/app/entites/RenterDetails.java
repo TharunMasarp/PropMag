@@ -12,11 +12,16 @@ public class RenterDetails {
 	
 	@Column(name="R_ID")
 	@NotNull
+	
+	@Id
 	private String renterId;
 	
-	@Column(name="R_NAME")
-	@Id
-	private String renterName;
+	
+	@Column(name="R_FirstName")
+	private String firstName;
+	
+	@Column(name="R_LastName")
+	private String lastName;
 	
 	@Column(name="R_LOCATION")
 	private String location;
@@ -38,12 +43,20 @@ public class RenterDetails {
 		this.renterId = renterId;
 	}
 
-	public String getRenterName() {
-		return renterName;
+	public String getFirstName() {
+		return firstName;
 	}
 
-	public void setRenterName(String renterName) {
-		this.renterName = renterName;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 
 	public String getLocation() {
@@ -77,4 +90,6 @@ public class RenterDetails {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
+	
 }

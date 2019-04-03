@@ -17,12 +17,13 @@
 	</bean>
 	<bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
 		<property name="dataSource" ref="dataSource"/>
-		<property name="packagesToScan">
+		<property name="annotatedClasses">
 			<list>
 				<value>com.app.entites.LandlordDetails</value>
 				<value>com.app.entites.RenterDetails</value>
 				<value>com.app.entites.LandlordAddProperty</value>
 			</list>
+
 		</property>
 		<property name="hibernateProperties">
 			<props>
@@ -32,7 +33,7 @@
 			</props>
 		</property>
 	</bean>
-	<bean id="txmanager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+	<bean id="transactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
 		<property name="sessionFactory" ref="sessionFactory"/>
 	</bean>
 	<bean id="landlordRegDaoImpl" class="com.app.dao.LandlordRegDaoImpl"/>

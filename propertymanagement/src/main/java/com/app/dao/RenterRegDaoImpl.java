@@ -27,7 +27,7 @@ public class RenterRegDaoImpl implements RenterRegDao {
 		BeanUtils.copyProperties(renterReg, rDetails);
 		Session session = sessionFactory.getCurrentSession();
 		session.saveOrUpdate(rDetails);
-		return renterReg.getRenterName()+" registered succssfully";
+		return renterReg.getFirstName()+" registered succssfully";
 	}
 
 	@Override
